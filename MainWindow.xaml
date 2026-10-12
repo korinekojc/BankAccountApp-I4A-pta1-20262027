@@ -1,0 +1,344 @@
+﻿<Window x:Class="BankAccountApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankAccountApp"
+        mc:Ignorable="d"
+         Title="Bankovní aplikace"
+        Height="900"
+        Width="1050"
+        MinWidth="900"
+        MinHeight="750">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <!-- NADPIS -->
+
+        <TextBlock Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Text="Bankovní aplikace"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+
+        <!-- ÚČET 1 -->
+
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,0,10,0"
+                Padding="20"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="8">
+
+            <StackPanel>
+
+                <TextBlock Text="Účet 1"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Margin="0,0,0,15"/>
+
+                <TextBlock Text="Typ účtu"/>
+
+                <ComboBox x:Name="CbAccountType1"
+                          SelectedIndex="2"
+                          Margin="0,5,0,10">
+
+                    <ComboBoxItem Content="Běžný účet"/>
+                    <ComboBoxItem Content="Spořicí účet"/>
+                    <ComboBoxItem Content="Studentský účet"/>
+
+                </ComboBox>
+
+
+                <TextBlock Text="Majitel"/>
+
+                <TextBox x:Name="TbOwner1"
+                         Text="Adam Novák"
+                         Margin="0,5,0,10"/>
+
+
+                <TextBlock Text="Číslo účtu"/>
+
+                <TextBox x:Name="TbAccountNumber1"
+                         Text="001"
+                         Margin="0,5,0,10"/>
+
+
+                <TextBlock Text="Počáteční zůstatek"/>
+
+                <TextBox x:Name="TbStartBalance1"
+                         Text="5000"
+                         Margin="0,5,0,10"/>
+
+
+                <TextBlock Text="Úroková sazba (%) – spořicí účet"/>
+
+                <TextBox x:Name="TbInterestRate1"
+                         Text="3"
+                         Margin="0,5,0,10"/>
+
+
+                <TextBlock Text="Limit debetu – studentský účet"/>
+
+                <TextBox x:Name="TbOverdraftLimit1"
+                         Text="2000"
+                         Margin="0,5,0,10"/>
+
+
+                <Button Content="Vytvořit / změnit účet"
+                        Width="180"
+                        Height="35"
+                        HorizontalAlignment="Left"
+                        Click="BtCreate1_Click"/>
+
+
+                <Separator Margin="0,20,0,15"/>
+
+
+                <TextBlock Text="Informace o účtu"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock x:Name="TbTypeInfo1"/>
+
+                <TextBlock x:Name="TbOwnerInfo1"/>
+
+                <TextBlock x:Name="TbNumberInfo1"/>
+
+                <TextBlock x:Name="TbBalanceInfo1"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Margin="0,5,0,0"/>
+
+                <TextBlock x:Name="TbFeeInfo1"
+                           Margin="0,5,0,0"/>
+
+                <TextBlock x:Name="TbInterestInfo1"
+                           Margin="0,5,0,0"/>
+
+                <TextBlock x:Name="TbAvailableFunds1"
+                           Margin="0,5,0,15"/>
+
+
+                <TextBlock Text="Částka"/>
+
+                <TextBox x:Name="TbAmount1"
+                         Margin="0,5,0,10"/>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Button Content="Vložit"
+                            Width="100"
+                            Height="35"
+                            Margin="0,0,10,0"
+                            Click="BtDeposit1_Click"/>
+
+                    <Button Content="Vybrat"
+                            Width="100"
+                            Height="35"
+                            Click="BtWithdraw1_Click"/>
+
+                </StackPanel>
+
+                <TextBlock x:Name="TbOperationInfo1"
+                           Margin="0,15,0,0"/>
+
+            </StackPanel>
+
+        </Border>
+
+
+        <!-- ÚČET 2 -->
+
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                Margin="10,0,0,0"
+                Padding="20"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="8">
+
+            <StackPanel>
+
+                <TextBlock Text="Účet 2"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Margin="0,0,0,15"/>
+
+                <TextBlock Text="Typ účtu"/>
+
+                <ComboBox x:Name="CbAccountType2"
+                          SelectedIndex="1"
+                          Margin="0,5,0,10">
+
+                    <ComboBoxItem Content="Běžný účet"/>
+                    <ComboBoxItem Content="Spořicí účet"/>
+                    <ComboBoxItem Content="Studentský účet"/>
+
+                </ComboBox>
+
+
+                <TextBlock Text="Majitel"/>
+
+                <TextBox x:Name="TbOwner2"
+                         Text="Eva Malá"
+                         Margin="0,5,0,10"/>
+
+
+                <TextBlock Text="Číslo účtu"/>
+
+                <TextBox x:Name="TbAccountNumber2"
+                         Text="002"
+                         Margin="0,5,0,10"/>
+
+
+                <TextBlock Text="Počáteční zůstatek"/>
+
+                <TextBox x:Name="TbStartBalance2"
+                         Text="12000"
+                         Margin="0,5,0,10"/>
+
+
+                <TextBlock Text="Úroková sazba (%) – spořicí účet"/>
+
+                <TextBox x:Name="TbInterestRate2"
+                         Text="3,5"
+                         Margin="0,5,0,10"/>
+
+
+                <TextBlock Text="Limit debetu – studentský účet"/>
+
+                <TextBox x:Name="TbOverdraftLimit2"
+                         Text="2000"
+                         Margin="0,5,0,10"/>
+
+
+                <Button Content="Vytvořit / změnit účet"
+                        Width="180"
+                        Height="35"
+                        HorizontalAlignment="Left"
+                        Click="BtCreate2_Click"/>
+
+
+                <Separator Margin="0,20,0,15"/>
+
+
+                <TextBlock Text="Informace o účtu"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Margin="0,0,0,10"/>
+
+                <TextBlock x:Name="TbTypeInfo2"/>
+
+                <TextBlock x:Name="TbOwnerInfo2"/>
+
+                <TextBlock x:Name="TbNumberInfo2"/>
+
+                <TextBlock x:Name="TbBalanceInfo2"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Margin="0,5,0,0"/>
+
+                <TextBlock x:Name="TbFeeInfo2"
+                           Margin="0,5,0,0"/>
+
+                <TextBlock x:Name="TbInterestInfo2"
+                           Margin="0,5,0,0"/>
+
+                <TextBlock x:Name="TbAvailableFunds2"
+                           Margin="0,5,0,15"/>
+
+
+                <TextBlock Text="Částka"/>
+
+                <TextBox x:Name="TbAmount2"
+                         Margin="0,5,0,10"/>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Button Content="Vložit"
+                            Width="100"
+                            Height="35"
+                            Margin="0,0,10,0"
+                            Click="BtDeposit2_Click"/>
+
+                    <Button Content="Vybrat"
+                            Width="100"
+                            Height="35"
+                            Click="BtWithdraw2_Click"/>
+
+                </StackPanel>
+
+                <TextBlock x:Name="TbOperationInfo2"
+                           Margin="0,15,0,0"/>
+
+            </StackPanel>
+
+        </Border>
+
+
+        <!-- PŘEVOD -->
+
+        <Border Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Margin="0,20,0,0"
+                Padding="15"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="8">
+
+            <StackPanel>
+
+                <TextBlock Text="Převod mezi účty"
+                           FontSize="18"
+                           FontWeight="Bold"/>
+
+                <TextBlock Text="Částka"
+                           Margin="0,10,0,0"/>
+
+                <TextBox x:Name="TbTransferAmount"
+                         Width="200"
+                         HorizontalAlignment="Left"
+                         Margin="0,5,0,10"/>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Button Content="Účet 1 → Účet 2"
+                            Width="150"
+                            Height="35"
+                            Margin="0,0,10,0"
+                            Click="BtTransfer1To2_Click"/>
+
+                    <Button Content="Účet 2 → Účet 1"
+                            Width="150"
+                            Height="35"
+                            Click="BtTransfer2To1_Click"/>
+
+                </StackPanel>
+
+                <TextBlock x:Name="TbTransferInfo"
+                           Margin="0,10,0,0"/>
+
+            </StackPanel>
+
+        </Border>
+
+    </Grid>
+</Window>
